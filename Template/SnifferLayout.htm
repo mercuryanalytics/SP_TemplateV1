@@ -1,0 +1,101 @@
+﻿<html>
+  <!--
+Licensed Materials - Property of UNICOM Systems, Inc.
+(C) Copyright UNICOM Systems, Inc. - a Division of UNICOM Global. 2001 - 2017
+-->
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title><mrPageTitle/></title>
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      href="Template/CSS/default.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (min-width: 801px)"
+      href="Template/CSS/wide.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (min-width: 401px) and (max-width: 800px)"
+      href="Template/CSS/mid.css"
+    />
+    <mrRef
+      RefType="link"
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (max-width: 400px)"
+      href="Template/CSS/narrow.css"
+    />
+    <mrRef
+      RefType="script"
+      type="text/javascript"
+      src="Template/JS/jquery-3.6.0.min.js"
+      >//Script</mrRef
+    >
+    <mrRef
+      RefType="script"
+      id="mediaQueryChecker"
+      type="text/javascript"
+      src="Template/JS/default.js"
+      defer="true"
+      >//Script</mrRef
+    >
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="https://s3.amazonaws.com/s3-assets.mercuryanalytics.com/tools/fingerprint.js"></script>
+    <style media="print" type="text/css">
+      body {
+        display: none;
+      }
+    </style>
+    <script src="https://wurfl.io/wurfl.js"></script>
+  </head>
+  <script type="text/javascript">
+    var valout;
+
+    document.getElementById("_Q6").value = WURFL.complete_device_name;
+    document.getElementById("_Q7").value = WURFL.form_factor;
+
+    fingerprint().then(function (response) {
+      valout = response.id;
+      if (response.terminate) {
+        valout = "TERM";
+      }
+    });
+    $.getJSON(
+      "https://workbench.mercuryanalytics.com/api/ipinfo.json",
+      function (resp) {
+        document.getElementById("_Q8").value = valout;
+        document.getElementById("_Q9").value = resp.ip;
+        //document.forms[0].submit();
+      }
+    );
+  </script>
+  <body>
+    <div class="content">
+      <mrPage IncludeElementIDs="true" />
+      <mrBannerText Name="LOGOS" class="logo"> [JSText] </mrBannerText>
+      <div class="questionArea">
+        <mrBannerText>mrBannerText</mrBannerText><br />
+        <mrBannerText Name="QName"> [QuestionName] </mrBannerText>
+        <mrData>Questions here</mrData>
+      </div>
+      <div class="nav">
+        <span style="direction: rtl; float: left; padding-right: 10px">
+          <mrNavButton Name="Next" />
+          <mrNavButton Name="Prev" />
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+/*
+Licensed Materials - Property of UNICOM Systems, Inc.
+(C) Copyright UNICOM Systems, Inc. - a Division of UNICOM Global. 2001 - 2017
+*/
+
+@charset "utf-8";
+
+body,
+html {
+  font-size: 80%;
+}
+
+.vertical-floater {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  height: 2em;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.branding-element {
+  display: none;
+}
+.content {
+  width: 90%;
+  position: absolute;
+  left: 0.5em;
+  top: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+form {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.questionArea {
+  position: absolute;
+  top: 2.1em;
+  bottom: 2.2em;
+  overflow: auto;
+  left: 0;
+  right: 0;
+  padding: 0 0 0 0.5em;
+  margin: 0;
+}
+.nav {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  height: 2.2em;
+  width: 100%;
+  background-color: #ecf0f4;
+  text-align: center;
+  display: block;
+}
+.mrNext,
+.mrPrev,
+.mrStop,
+.mrGoTo {
+  padding: 0;
+  margin: 0.1em;
+  background-color: transparent;
+  text-align: center;
+  font-size: 100%;
+  height: 2em;
+  border: none;
+  background-color: #fff;
+  width: 80px;
+}

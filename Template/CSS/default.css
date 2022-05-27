@@ -1,0 +1,429 @@
+:root {
+  --table-border-color: black;
+  --page-background-color: white;
+  --highlight-color: rgb(114, 218, 114);
+  --background-image: url("../Images/DSC_2070.JPG");
+  --text-box-border: 1px solid white;
+  --text-box-background: rgb(148, 141, 141);
+  --text-box-color: white;
+  --button-color-one: #8fd934;
+  --button-color-two: #2bb863;
+  --button-hover-color-one: #b3fc3c;
+  --button-hover-color-two: #34d976;
+}
+
+/*
+Licensed Materials - Property of UNICOM Systems, Inc.
+(C) Copyright UNICOM Systems, Inc. - a Division of UNICOM Global. 2001 - 2017
+*/
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+  background-color: var(--page-background-color);
+  background: var(--background-image) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.content,
+.nav {
+  padding: 0;
+  margin: 0;
+  font-size: 90%;
+}
+.content {
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 5em;
+  right: 0;
+  overflow: auto;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+form {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+}
+.questionArea {
+  position: relative;
+  margin: 0;
+  padding: 1em;
+}
+.nav {
+  position: relative;
+  padding: 0 1em;
+  height: 2em;
+  display: block;
+}
+
+.vertical-floater {
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  top: 50%;
+  margin: -32px 0 0 0;
+}
+
+.mrBannerText {
+  font-weight: bold;
+}
+/*
+.mrEdit,
+.mrDropDown,
+.mrListBox,
+.mrQuestionText,
+.mrSingleText {
+}*/
+.mrErrorText {
+  font-weight: bold;
+  color: #b10000;
+}
+
+/* ---- Lining Up Wrapped Response Texts Control ---- */
+/*span.mrQuestionTable span input.mrMultiple,
+.mrQuestionTable span input.mrSingle {
+  display: block;
+  position: absolute;
+}*/
+span.mrQuestionTable span label span.mrMultipleText,
+.mrQuestionTable span label span.mrSingleText {
+  display: inline-block;
+  margin-left: 1em;
+  display: table-cell;
+  vertical-align: middle;
+  max-width: 50vw;
+}
+
+/* ---- mrOther Style Control ---- */
+span.mrQuestionTable span span input.mrOtherEdit {
+  display: inline;
+  margin-left: 0.1em;
+}
+span.mrQuestionTable span span label span.mrOtherText {
+  display: inline;
+  margin-left: 0.5em;
+}
+
+/* ---- For Table Layout ---- */
+table.mrQuestionTable tbody tr td input.mrMultiple,
+table.mrQuestionTable tbody tr td input.mrSingle {
+  display: block;
+  position: absolute;
+}
+table.mrQuestionTable tbody tr td label span.mrMultipleText,
+table.mrQuestionTable tbody tr td label span.mrSingleText {
+  display: inline-block;
+  margin-left: 3em;
+}
+
+/* ---- mrOther Sytle Control For Table Layout ---- */
+table.mrQuestionTable tbody tr td input.mrOtherEdit {
+  display: block;
+  margin-left: 3.5em;
+}
+table.mrQuestionTable tbody tr td span label span.mrOtherText {
+  display: block;
+  margin-left: 3em;
+}
+
+/* ---- Clear GridCategory Control Style For Table Layout ---- */
+table.mrQuestionTable
+  tbody
+  tr
+  td[class~="mrGridCategoryText"]
+  ~ td
+  input.mrSingle {
+  display: inline;
+  position: static;
+}
+table.mrQuestionTable
+  tbody
+  tr
+  td[class~="mrGridCategoryText"]
+  ~ td
+  input.mrMultiple {
+  display: inline;
+  position: static;
+}
+
+/* -----remove spinner from number control ---*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/*-------------------custom settings ---*/
+
+input[type="radio"] {
+  border: 0px !important;
+}
+.mrGridTable .mrSingle,
+.mrGridTable .mrMultiple {
+  display: inline;
+}
+
+.mrGridTable input[type="radio"],
+.mrGridTable input[type="radio"] {
+  border: 1px solid black;
+}
+
+.mrGridTable tr:hover td:not(:first-child) {
+  font-weight: bold;
+  background-color: var(--highlight-color);
+  opacity: 0.5;
+}
+
+.mrGridTable td {
+  font-weight: bold;
+  background-color: var(--highlight-color);
+  opacity: 0.5;
+}
+
+.mrQuestionTable tr:not(:first-child):hover {
+  font-weight: bold;
+  background-color: var(--highlight-color);
+  opacity: 0.5;
+}
+
+.mrQuestionTable td:hover {
+  font-weight: bold;
+  background-color: var(--highlight-color);
+  opacity: 0.5;
+}
+
+.mrSingleText,
+.mrMultipleText {
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 10px;
+  width: 60%;
+}
+
+.mrSingleText span,
+.mrMultipleText span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+input[class="mrSingle"]:checked + label .mrSingleText,
+input[class="mrSingle"]:checked + label ~ .mrSingleText {
+  font-weight: bold;
+  background-color: var(--highlight-color);
+  opacity: 0.5;
+  top: 5px;
+}
+
+input[class="mrSingle"]:hover + label .mrSingleText,
+input[class="mrSingle"]:hover + label ~ .mrSingleText {
+  font-weight: bold;
+  background-color: var(--highlight-color);
+  opacity: 0.5;
+  top: 5px;
+}
+
+input[class="mrMultiple"]:checked + label .mrMultipleText,
+input[class="mrMultiple"]:checked + label ~ .mrMultipleText {
+  font-weight: bold;
+  background-color: var(--highlight-color);
+  opacity: 0.5;
+  top: 5px;
+}
+
+input[class="mrMultiple"]:hover + label .mrMultipleText,
+input[class="mrMultiple"]:hover + label ~ .mrMultipleText {
+  font-weight: bold;
+  background-color: var(--highlight-color);
+  opacity: 0.5;
+  top: 5px;
+}
+
+table.mrQuestionTable tr td {
+  border: 1px solid var(--table-border-color);
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+table.custom-mobile-grid tr td {
+  border: 1px solid var(--table-border-color);
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+table.custom-mobile-grid thead td:first-child {
+  border-top: none;
+  border-left: none;
+}
+table.mrQuestionTable thead td:first-child {
+  border-top: none;
+  border-left: none;
+}
+
+table.mrQuestionTable thead td:first-child:hover {
+  border-top: none;
+  background-color: transparent;
+  color: none;
+  border: none;
+}
+
+table.custom-mobile-grid thead td:first-child:hover {
+  border-top: none;
+  background-color: transparent;
+  color: none;
+  border: none;
+}
+table.mrQuestionTable tr:first-child td:first-child,
+table.mrQuestionTable tr:first-child thead td:first-child {
+  border-top: none;
+  background-color: transparent;
+  color: none;
+  border: none;
+}
+table.custom-mobile-grid tr:first-child td:first-child,
+table.custom-mobile-grid tr:first-child thead td:first-child {
+  border-top: none;
+  background-color: transparent;
+  color: none;
+  border: none;
+}
+
+table.mrQuestionTable tr:first-child td:first-child:hover,
+table.mrQuestionTable tr:first-child thead td:first-child:hover {
+  border-top: none;
+  background-color: transparent;
+  color: none;
+  border: none;
+}
+
+table.custom-mobile-grid tr:first-child td:first-child:hover,
+table.custom-mobile-grid tr:first-child thead td:first-child:hover {
+  border-top: none;
+  background-color: transparent;
+  color: none;
+  border: none;
+}
+/*
+table.mrQuestionTable tr td:last-child {
+  border-right: none;
+}
+
+table.mrQuestionTable tr:last-child td {
+  border-bottom: none;
+}
+table.mrQuestionTable tr td:first-child {
+  border-left: none;
+}
+*/
+table.mrQuestionTable tr td:first-child {
+  cursor: default;
+}
+.mrQuestionTable .mrSingle,
+.mrQuestionTable .mrMultiple {
+  display: none;
+}
+.mrEdit {
+  border: var(--tex-tbox-border);
+  background: var(--text-box-background);
+  color: var(--text-box-color);
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/*
+.mrQuestionTable {
+  overflow-y: scroll;
+  height: 200px;
+}*/
+
+/* formatting navigation buttons */
+.mrPrev,
+.mrNext {
+  background: var(--button-color-one);
+  background-image: -webkit-linear-gradient(
+    top,
+    var(--button-color-one),
+    var(--button-color-two)
+  );
+  background-image: -moz-linear-gradient(
+    top,
+    var(--button-color-one),
+    var(--button-color-two)
+  );
+  background-image: -ms-linear-gradient(
+    top,
+    var(--button-color-one),
+    var(--button-color-two)
+  );
+  background-image: -o-linear-gradient(
+    top,
+    var(--button-color-one),
+    var(--button-color-two)
+  );
+  background-image: linear-gradient(
+    to bottom,
+    var(--button-color-one),
+    var(--button-color-two)
+  );
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #030003;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.mrPrev:hover,
+.mrNext:hover {
+  background: var(--button-hover-color-one);
+  background-image: -webkit-linear-gradient(
+    top,
+    var(--button-hover-color-one),
+    Var(--button-hover-color-two)
+  );
+  background-image: -moz-linear-gradient(
+    top,
+    var(--button-hover-color-one),
+    Var(--button-hover-color-two)
+  );
+  background-image: -ms-linear-gradient(
+    top,
+    var(--button-hover-color-one),
+    Var(--button-hover-color-two)
+  );
+  background-image: -o-linear-gradient(
+    top,
+    var(--button-hover-color-one),
+    Var(--button-hover-color-two)
+  );
+  background-image: linear-gradient(
+    to bottom,
+    var(--button-hover-color-one),
+    Var(--button-hover-color-two)
+  );
+  text-decoration: none;
+}

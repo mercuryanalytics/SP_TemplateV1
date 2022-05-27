@@ -1,0 +1,58 @@
+<mrSubTemplate>
+  <mrRef
+    RefType="script"
+    RefPosition="head"
+    type="text/javascript"
+    src="Template/JS/sniffer.js"
+    ><!-- No Text --></mrRef
+  >
+  <mrRef
+    RefType="script"
+    RefPosition="head"
+    type="text/javascript"
+    src="Template/JS/AC_OETags.js"
+    ><!-- No Text --></mrRef
+  >
+  <mrRef
+    RefType="script"
+    RefPosition="head"
+    type="text/javascript"
+    src="Template/JS/jquery-3.6.0.min.js"
+    ><!-- No Text --></mrRef
+  >
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <script src="https://s3.amazonaws.com/s3-assets.mercuryanalytics.com/tools/fingerprint.js"></script>
+
+  <script src="https://wurfl.io/wurfl.js"></script>
+  <div id="sniffhidden" style="display: none">
+    <div><mrData QuestionElement="Banner" /><!-- Nothing --></div>
+    <mrData QuestionElement="Controls" />
+  </div>
+  <script type="text/javascript">
+    showDottedLine=false;
+       if (typeof sniffObj != 'undefined') {
+           document.forms[0].<mrData QuestionElement="Parameter" Type="FullQuestionName"/>.value = sniffObj.<mrData QuestionElement="Parameter" Type="QuestionName"/>;
+       }
+  </script>
+  <script type="text/javascript">
+    var valout;
+
+    document.getElementById("_Q6").value = WURFL.complete_device_name;
+    document.getElementById("_Q7").value = WURFL.form_factor;
+
+    fingerprint().then(function (response) {
+      valout = response.id;
+      if (response.terminate) {
+        document.getElementById("_Q8").value = "TERM";
+      }
+    });
+    $.getJSON(
+      "https://workbench.mercuryanalytics.com/api/ipinfo.json",
+      function (resp) {
+        document.getElementById("_Q8").value = valout;
+        document.getElementById("_Q9").value = resp.ip;
+        document.forms[0].submit();
+      }
+    );
+  </script>
+</mrSubTemplate>
